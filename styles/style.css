@@ -1,0 +1,44 @@
+/* Body, standard font style */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #212529;
+}
+
+/* Top header */
+.top-header {
+	background-color: #000;
+	color: white;
+}
+.top-header a {
+	color:white;
+	text-decoration: none;
+}
+.top-header a:hover {
+	color: #ccc;
+}
+
+/* Bootstrap  */
+.navbar-nav .nav-link,
+.navbar-text {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.dropdown-menu .dropdown-item {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.card {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.card-title {
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+.card-text {
+  font-size: 0.95rem;
+}
