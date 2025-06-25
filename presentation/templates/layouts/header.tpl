@@ -51,27 +51,28 @@
 </div>
 
 <!-- Main Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-black bg-light">
   <div class="container">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="mainNavbar">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-		{foreach $navCats as $cat}
-		  <li class="nav-item dropdown">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		  {foreach $navCats as $dept}
+			<li class="nav-item dropdown">
 			  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-				 {$cat.name}
+				{$dept.name}
 			  </a>
 			  <ul class="dropdown-menu">
-				{foreach $cat.subcats as $sub}
-				  <li><a class="dropdown-item" href="/category.php?id={$sub.id}">{$sub.name}</a></li>
+				{foreach $dept.categories as $cat}
+				  <li><a class="dropdown-item" href="/category.php?id={$cat.category_id}">{$cat.name}</a></li>
 				{/foreach}
 			  </ul>
-		  </li>
-			{/foreach}
+			</li>
+		  {/foreach}
 		</ul>
+
 		<!-- Support Blurb -->
 		<span class="navbar-text text-black ms-auto d-none d-lg-block">
 		  Questions or concerns? Call toll-free at <strong>1-800-555-TECH</strong>

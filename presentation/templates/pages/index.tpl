@@ -1,4 +1,34 @@
-<h1 class="mb-4">Welcome to NewarkIT</h1>
+
+<div class="carousel-frame mb-4" style="height: 425px;">
+	<div id="homepageCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+	  <div class="carousel-inner">
+		<div class="carousel-item active">
+		  <img src="../images/banner-1.png" class="d-block w-100" alt="Banner 1">
+		</div>
+		<div class="carousel-item">
+		  <img src="../images/banner-2.png" class="d-block w-100" alt="Banner 2">
+		</div>
+		<div class="carousel-item">
+		  <img src="../images/banner-3.png" class="d-block w-100" alt="Banner 3">
+		</div>
+	  </div>
+
+	  <!-- Arrows -->
+	  <button class="carousel-control-prev" type="button" data-bs-target="#homepageCarousel" data-bs-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Previous</span>
+	  </button>
+
+	  <button class="carousel-control-next" type="button" data-bs-target="#homepageCarousel" data-bs-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Next</span>
+	  </button>
+	</div>
+</div>
+
+<h3>Featured Offers</h3>
+<p>Order online or in-store for the best deals on new tech. For a limited time only.</p>
+<hr>
 
 {if $products|@count > 0}
 <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -10,7 +40,7 @@
           <h5 class="card-title">{$product.name}</h5>
           <p class="card-text">{$product.description|truncate:100}</p>
           <p class="card-text fw-bold">${$product.price}</p>
-          <a href="product.php?id={$product.id}" class="btn btn-primary">View Product</a>
+          <a href="product.php?id={$product.product_id}" class="btn btn-primary">View Product</a>
         </div>
       </div>
     </div>

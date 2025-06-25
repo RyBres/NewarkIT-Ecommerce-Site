@@ -1,6 +1,6 @@
 </div> <!-- end container -->
 <footer class="text-center py-3 bg-light mt-4">
-    <p>&copy; 2025 NewarkIT</p>
+    <p>&copy; 2025 Newark IT (Ryan Bresnahan)</p>
 </footer>
 
 <!-- Bootstrap JS Bundle -->

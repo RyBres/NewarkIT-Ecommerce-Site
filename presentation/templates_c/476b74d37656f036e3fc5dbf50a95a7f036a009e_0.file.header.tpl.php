@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.5, created on 2025-06-25 07:35:38
+/* Smarty version 4.5.5, created on 2025-06-25 19:46:17
   from 'C:\Users\bresn\OneDrive\Documents\GitHub\NewarkIT-Ecommerce-Site\presentation\templates\layouts\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.5',
-  'unifunc' => 'content_685b8aaaa8d506_45584762',
+  'unifunc' => 'content_685c35e9474913_96173940',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '476b74d37656f036e3fc5dbf50a95a7f036a009e' => 
     array (
       0 => 'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\presentation\\templates\\layouts\\header.tpl',
-      1 => 1750829737,
+      1 => 1750873574,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_685b8aaaa8d506_45584762 (Smarty_Internal_Template $_smarty_tpl) {
+function content_685c35e9474913_96173940 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "site.conf", null, 0);
 ?>
 
@@ -76,44 +76,45 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "site.conf"
 </div>
 
 <!-- Main Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-black bg-light">
   <div class="container">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="mainNavbar">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-		<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['navCats']->value, 'cat');
-$_smarty_tpl->tpl_vars['cat']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['cat']->value) {
-$_smarty_tpl->tpl_vars['cat']->do_else = false;
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+		  <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['navCats']->value, 'dept');
+$_smarty_tpl->tpl_vars['dept']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['dept']->value) {
+$_smarty_tpl->tpl_vars['dept']->do_else = false;
 ?>
-		  <li class="nav-item dropdown">
+			<li class="nav-item dropdown">
 			  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-				 <?php echo $_smarty_tpl->tpl_vars['cat']->value['name'];?>
+				<?php echo $_smarty_tpl->tpl_vars['dept']->value['name'];?>
 
 			  </a>
 			  <ul class="dropdown-menu">
 				<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['cat']->value['subcats'], 'sub');
-$_smarty_tpl->tpl_vars['sub']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['sub']->value) {
-$_smarty_tpl->tpl_vars['sub']->do_else = false;
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['dept']->value['categories'], 'cat');
+$_smarty_tpl->tpl_vars['cat']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['cat']->value) {
+$_smarty_tpl->tpl_vars['cat']->do_else = false;
 ?>
-				  <li><a class="dropdown-item" href="/category.php?id=<?php echo $_smarty_tpl->tpl_vars['sub']->value['id'];?>
-"><?php echo $_smarty_tpl->tpl_vars['sub']->value['name'];?>
+				  <li><a class="dropdown-item" href="/category.php?id=<?php echo $_smarty_tpl->tpl_vars['cat']->value['category_id'];?>
+"><?php echo $_smarty_tpl->tpl_vars['cat']->value['name'];?>
 </a></li>
 				<?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 			  </ul>
-		  </li>
-			<?php
+			</li>
+		  <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		</ul>
+
 		<!-- Support Blurb -->
 		<span class="navbar-text text-black ms-auto d-none d-lg-block">
 		  Questions or concerns? Call toll-free at <strong>1-800-555-TECH</strong>

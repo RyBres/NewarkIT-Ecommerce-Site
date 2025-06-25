@@ -7,9 +7,9 @@ require_once '../include/functions.php';
 $navCats = getNavCategories($conn);
 $smarty->assign('navCats', $navCats);
 
-/* 2)  pull products for the home grid (e.g. newest 12) */
+/* 2)  pull products for the home grid (e.g. newest 6) */
 $products = [];
-$prodRes  = $conn->query("SELECT * FROM products ORDER BY id DESC LIMIT 12");
+$prodRes = $conn->query("SELECT * FROM products ORDER BY product_id DESC LIMIT 6");
 while ($p = $prodRes->fetch_assoc()) { $products[] = $p; }
 $smarty->assign('products', $products);
 $smarty->assign('title', 'Home');
