@@ -17,7 +17,7 @@
 <div class="top-header py-2">
   <div class="container d-flex justify-content-between align-items-center" >
     <!-- Logo -->
-	<a href="/index.php">
+	<a href="../public/index.php">
 	  <img src="../images/newark-it-logo.png" alt="Newark IT" class="img-fluid" style="max-height: 70px;">
 	</a>
 
@@ -59,18 +59,26 @@
 
     <div class="collapse navbar-collapse" id="mainNavbar">
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-		  {foreach $navCats as $dept}
-			<li class="nav-item dropdown">
-			  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-				{$dept.name}
-			  </a>
-			  <ul class="dropdown-menu">
-				{foreach $dept.categories as $cat}
-				  <li><a class="dropdown-item" href="/category.php?id={$cat.category_id}">{$cat.name}</a></li>
-				{/foreach}
-			  </ul>
-			</li>
-		  {/foreach}
+			{foreach $navCats as $dept}
+			  {if $dept.name == 'Services'}
+				<li class="nav-item">
+				  <a class="nav-link" style="width:125px !important; min-width:125px !important;" href="/NewarkIT-Ecommerce-Site/public/services.php">
+				    <strong>{$dept.name}</strong>
+				  </a> <!-- MOVE THIS TO STYLES -->
+				</li>
+			  {else}
+				<li class="nav-item dropdown" style="width:125px !important; min-width:125px !important;"> <!-- MOVE THIS TO STYLES -->
+				  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+					<strong>{$dept.name}</strong>
+				  </a>
+				  <ul class="dropdown-menu fixed-width-dropdown">
+					{foreach $dept.categories as $cat}
+					  <li><a class="dropdown-item" href="../public/category.php?id={$cat.category_id}">{$cat.name}</a></li>
+					{/foreach}
+				  </ul>
+				</li>
+			  {/if}
+			{/foreach}
 		</ul>
 
 		<!-- Support Blurb -->

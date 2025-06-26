@@ -25,6 +25,7 @@ h1 {
 }
 
 /* Bootstrap  */
+/* Typography for nav links and support blurb */
 .navbar-nav .nav-link,
 .navbar-text {
   font-weight: 500;
@@ -32,6 +33,18 @@ h1 {
   color: black !important;
 }
 
+/* Vertical divider between navbar items */
+.navbar-nav .nav-item:not(:last-child) {
+  border-right: 1px solid silver;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav .nav-item:not(:last-child) {
+    border-right: none;
+  }
+}
+
+/* Hover underline */
 .nav-link {
   border-bottom: 5px solid transparent;
 }
@@ -40,10 +53,42 @@ h1 {
   border-bottom: 5px solid #00bf63;
 }
 
-.dropdown-menu .dropdown-item {
+/* ✅ Force dropdown menu width */
+.navbar-nav .dropdown-menu {
+  width: 150px !important;           /* Force fixed width */
+  min-width: unset !important;       /* Reset Bootstrap's min-width */
+  max-width: unset !important;       /* Ensure no unexpected max */
+  padding: 0 !important;             /* Optional: tighter look */
+}
+
+/* ✅ Make each dropdown item consistent */
+.navbar-nav .dropdown-menu .dropdown-item {
+  width: 100% !important;
+  text-align: left;
+  white-space: nowrap;
+  padding: 0.75rem 1rem;             /* Optional: more even spacing */
   font-weight: 500;
   font-size: 0.95rem;
 }
+
+/* Force consistent dropdown width */
+.fixed-width-dropdown {
+  width: 150px !important;
+  min-width: 150px !important;
+  max-width: 150px !important;
+  padding: 0 !important;
+}
+
+/* Make dropdown items align fully inside the dropdown */
+.fixed-width-dropdown .dropdown-item {
+  width: 100%;
+  white-space: nowrap;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
 
 .card {
   font-weight: 500;
@@ -56,6 +101,10 @@ h1 {
 .card-text {
 	color: black;
 	font-size: 0.95rem;
+}
+
+.card-img-top {
+	width: 150px;
 }
 
 /* Carousel frame */

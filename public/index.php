@@ -9,8 +9,14 @@ $smarty->assign('navCats', $navCats);
 
 /* 2)  pull products for the home grid (e.g. newest 6) */
 $products = [];
-$prodRes = $conn->query("SELECT * FROM products ORDER BY product_id DESC LIMIT 6");
-while ($p = $prodRes->fetch_assoc()) { $products[] = $p; }
+$prodRes = $conn->query("SELECT *, 
+  ROUND(price - (price * discount_percent / 100), 2) AS final_price 
+  FROM products 
+  WHERE discount_percent > 0
+  ORDER BY product_id DESC LIMIT 6");
+while ($p = $prodRes->fetch_assoc()) { 
+  $products[] = $p; 
+}
 $smarty->assign('products', $products);
 $smarty->assign('title', 'Home');
 
@@ -18,3 +24,4 @@ $smarty->assign('title', 'Home');
 $smarty->display('layouts/header.tpl');
 $smarty->display('pages/index.tpl');
 $smarty->display('layouts/footer.tpl');
+?>

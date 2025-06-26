@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.5, created on 2025-06-25 22:10:42
+/* Smarty version 4.5.5, created on 2025-06-26 03:15:34
   from 'C:\Users\bresn\OneDrive\Documents\GitHub\NewarkIT-Ecommerce-Site\presentation\templates\pages\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.5',
-  'unifunc' => 'content_685c57c2597e47_76070732',
+  'unifunc' => 'content_685c9f368aa084_11152870',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '59610cafd2a57c7410805ca2836baaefeef0a18d' => 
     array (
       0 => 'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\presentation\\templates\\pages\\index.tpl',
-      1 => 1750882240,
+      1 => 1750900530,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_685c57c2597e47_76070732 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),1=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),));
+function content_685c9f368aa084_11152870 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),1=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),2=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.number_format.php','function'=>'smarty_modifier_number_format',),));
 ?>
 
 <div class="carousel-frame mb-4" style="height: 425px;">
@@ -51,10 +51,11 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\bresn\\OneDrive\\
 	</div>
 </div>
 
-<h3>Featured Offers</h3>
-<p>Order online or in-store for the best deals on new tech. For a limited time only.</p>
+<h3 style="color: #000;">Featured Offers</h3>
+<p style="color: #000;">Order online or in-store for the best deals on new tech. For a limited time only.</p>
 <hr>
 
+<!-- Product card grid -->
 <?php if (smarty_modifier_count($_smarty_tpl->tpl_vars['products']->value) > 0) {?>
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <?php
@@ -65,16 +66,30 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
     <div class="col">
       <div class="card h-100 shadow-sm">
-        <img src="/images/<?php echo $_smarty_tpl->tpl_vars['product']->value['image'];?>
-" class="card-img-top" alt="<?php echo $_smarty_tpl->tpl_vars['product']->value['name'];?>
+		<?php if ($_smarty_tpl->tpl_vars['product']->value['discount_percent'] > 0) {?>
+		<span class="badge bg-danger position-absolute top-0 end-0 m-2">Sale</span>
+		<?php }?>
+        <img src="../images/products/<?php echo $_smarty_tpl->tpl_vars['product']->value['image'];?>
+" class="card-img-top mx-auto d-block" alt="<?php echo $_smarty_tpl->tpl_vars['product']->value['name'];?>
 ">
         <div class="card-body">
           <h5 class="card-title"><?php echo $_smarty_tpl->tpl_vars['product']->value['name'];?>
 </h5>
           <p class="card-text"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['product']->value['description'],100);?>
 </p>
-          <p class="card-text fw-bold">$<?php echo $_smarty_tpl->tpl_vars['product']->value['price'];?>
-</p>
+          <p class="card-text">
+		  <?php if ($_smarty_tpl->tpl_vars['product']->value['discount_percent'] > 0) {?>
+			<span class="text-muted text-decoration-line-through">$<?php echo $_smarty_tpl->tpl_vars['product']->value['price'];?>
+</span>
+			<span class="text-danger fw-bold">
+			  $<?php echo $_smarty_tpl->tpl_vars['product']->value['price']-smarty_modifier_number_format(($_smarty_tpl->tpl_vars['product']->value['price']*$_smarty_tpl->tpl_vars['product']->value['discount_percent']/100),2);?>
+
+			</span>
+		  <?php } else { ?>
+			<span class="fw-bold">$<?php echo $_smarty_tpl->tpl_vars['product']->value['price'];?>
+</span>
+		  <?php }?>
+		  </p>
           <a href="product.php?id=<?php echo $_smarty_tpl->tpl_vars['product']->value['product_id'];?>
 " class="btn btn-primary">View Product</a>
         </div>

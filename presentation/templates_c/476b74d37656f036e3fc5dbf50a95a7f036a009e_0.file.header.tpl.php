@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.5, created on 2025-06-25 19:46:17
+/* Smarty version 4.5.5, created on 2025-06-26 03:20:23
   from 'C:\Users\bresn\OneDrive\Documents\GitHub\NewarkIT-Ecommerce-Site\presentation\templates\layouts\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.5',
-  'unifunc' => 'content_685c35e9474913_96173940',
+  'unifunc' => 'content_685ca0574a1897_73725619',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '476b74d37656f036e3fc5dbf50a95a7f036a009e' => 
     array (
       0 => 'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\presentation\\templates\\layouts\\header.tpl',
-      1 => 1750873574,
+      1 => 1750900821,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_685c35e9474913_96173940 (Smarty_Internal_Template $_smarty_tpl) {
+function content_685ca0574a1897_73725619 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "site.conf", null, 0);
 ?>
 
@@ -42,7 +42,7 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "site.conf"
 <div class="top-header py-2">
   <div class="container d-flex justify-content-between align-items-center" >
     <!-- Logo -->
-	<a href="/index.php">
+	<a href="../public/index.php">
 	  <img src="../images/newark-it-logo.png" alt="Newark IT" class="img-fluid" style="max-height: 70px;">
 	</a>
 
@@ -84,33 +84,42 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "site.conf"
 
     <div class="collapse navbar-collapse" id="mainNavbar">
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-		  <?php
+			<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['navCats']->value, 'dept');
 $_smarty_tpl->tpl_vars['dept']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['dept']->value) {
 $_smarty_tpl->tpl_vars['dept']->do_else = false;
 ?>
-			<li class="nav-item dropdown">
-			  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
-				<?php echo $_smarty_tpl->tpl_vars['dept']->value['name'];?>
-
-			  </a>
-			  <ul class="dropdown-menu">
-				<?php
+			  <?php if ($_smarty_tpl->tpl_vars['dept']->value['name'] == 'Services') {?>
+				<li class="nav-item">
+				  <a class="nav-link" style="width:125px !important; min-width:125px !important;" href="/NewarkIT-Ecommerce-Site/public/services.php">
+				    <strong><?php echo $_smarty_tpl->tpl_vars['dept']->value['name'];?>
+</strong>
+				  </a> <!-- MOVE THIS TO STYLES -->
+				</li>
+			  <?php } else { ?>
+				<li class="nav-item dropdown" style="width:125px !important; min-width:125px !important;"> <!-- MOVE THIS TO STYLES -->
+				  <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+					<strong><?php echo $_smarty_tpl->tpl_vars['dept']->value['name'];?>
+</strong>
+				  </a>
+				  <ul class="dropdown-menu fixed-width-dropdown">
+					<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['dept']->value['categories'], 'cat');
 $_smarty_tpl->tpl_vars['cat']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['cat']->value) {
 $_smarty_tpl->tpl_vars['cat']->do_else = false;
 ?>
-				  <li><a class="dropdown-item" href="/category.php?id=<?php echo $_smarty_tpl->tpl_vars['cat']->value['category_id'];?>
+					  <li><a class="dropdown-item" href="../public/category.php?id=<?php echo $_smarty_tpl->tpl_vars['cat']->value['category_id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['cat']->value['name'];?>
 </a></li>
-				<?php
+					<?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-			  </ul>
-			</li>
-		  <?php
+				  </ul>
+				</li>
+			  <?php }?>
+			<?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		</ul>
