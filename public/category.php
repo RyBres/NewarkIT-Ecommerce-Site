@@ -41,3 +41,4 @@ $smarty->assign('navCats', getNavCategories($conn));
 $smarty->display('layouts/header.tpl');
 $smarty->display('pages/category.tpl');
 $smarty->display('layouts/footer.tpl');
+?>

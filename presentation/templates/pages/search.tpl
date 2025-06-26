@@ -1,4 +1,4 @@
-<h1 class="mb-4">{$categoryName}</h1>
+<h1 class="mb-4">Search Results for "{$searchTerm|escape}"</h1>
 <hr>
 {if $products|@count > 0}
   <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -29,5 +29,5 @@
     {/foreach}
   </div>
 {else}
-  <p>No products in this category yet.</p>
+  <p>No products found matching "{$searchTerm|escape}".</p>
 {/if}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.5, created on 2025-06-26 03:20:23
+/* Smarty version 4.5.5, created on 2025-06-26 05:37:20
   from 'C:\Users\bresn\OneDrive\Documents\GitHub\NewarkIT-Ecommerce-Site\presentation\templates\layouts\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.5',
-  'unifunc' => 'content_685ca0574a1897_73725619',
+  'unifunc' => 'content_685cc070e16822_84569127',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '476b74d37656f036e3fc5dbf50a95a7f036a009e' => 
     array (
       0 => 'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\presentation\\templates\\layouts\\header.tpl',
-      1 => 1750900821,
+      1 => 1750907583,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_685ca0574a1897_73725619 (Smarty_Internal_Template $_smarty_tpl) {
+function content_685cc070e16822_84569127 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "site.conf", null, 0);
 ?>
 
@@ -43,11 +43,11 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "site.conf"
   <div class="container d-flex justify-content-between align-items-center" >
     <!-- Logo -->
 	<a href="../public/index.php">
-	  <img src="../images/newark-it-logo.png" alt="Newark IT" class="img-fluid" style="max-height: 70px;">
+	  <img src="../images/newark-it-logo.png" alt="Newark IT" class="img-fluid" style="max-height: 80px;">
 	</a>
 
     <!-- Search Bar -->
-    <form class="d-flex w-50" method="get" action="/search.php">
+    <form class="d-flex w-50" method="get" action="../public/search.php">
       <input class="form-control me-2" type="search" name="q" placeholder="Search products..." aria-label="Search">
       <button class="btn btn-primary" type="submit">
 	  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="vertical-align: -0.1em;" class="bi bi-search" viewBox="0 0 16 16">
@@ -64,7 +64,7 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "site.conf"
 		</svg>
 	  Login
 	  </a>
-      <a href="/cart.php" class="btn btn-success">
+      <a href="../public/cart/view.php" class="btn btn-success">
 	  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" style="vertical-align: -0.1em;" class="bi bi-cart" viewBox="0 0 16 16">
 			::before
 			<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
@@ -93,6 +93,13 @@ $_smarty_tpl->tpl_vars['dept']->do_else = false;
 			  <?php if ($_smarty_tpl->tpl_vars['dept']->value['name'] == 'Services') {?>
 				<li class="nav-item">
 				  <a class="nav-link" style="width:125px !important; min-width:125px !important;" href="/NewarkIT-Ecommerce-Site/public/services.php">
+				    <strong><?php echo $_smarty_tpl->tpl_vars['dept']->value['name'];?>
+</strong>
+				  </a> <!-- MOVE THIS TO STYLES -->
+				</li>
+			  <?php } elseif ($_smarty_tpl->tpl_vars['dept']->value['name'] == 'Deals') {?>
+				<li class="nav-item">
+				  <a class="nav-link" style="width:125px !important; min-width:125px !important;" href="/NewarkIT-Ecommerce-Site/public/deals.php">
 				    <strong><?php echo $_smarty_tpl->tpl_vars['dept']->value['name'];?>
 </strong>
 				  </a> <!-- MOVE THIS TO STYLES -->

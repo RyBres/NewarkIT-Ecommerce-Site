@@ -9,10 +9,10 @@ CREATE TABLE departments (
 );
 
 INSERT INTO departments (name) VALUES
-('Deals'),
 ('PC'),
 ('Apple'),
 ('Other'),
+('Deals'),
 ('Services');
 
 /* ----- Categories (belong to departments) ----- */
@@ -23,22 +23,28 @@ CREATE TABLE categories (
 	FOREIGN KEY (department_id) REFERENCES departments(department_id)
 );
 
--- Insert categories using department IDs (assumes IDs are 1–5 in same order)
+-- Insert categories using correct department IDs:
+-- PC = 1, Apple = 2, Other = 3
 INSERT INTO categories (name, department_id) VALUES
--- Deals
-('Bundles', 1), ('Clearance', 1), ('Seasonal', 1),
 -- PC
-('Desktops', 2), ('Laptops', 2), ('Accessories', 2),
+('Desktops', 1),       -- category_id = 1
+('Laptops', 1),        -- category_id = 2
+('Accessories', 1),    -- category_id = 3
 -- Apple
-('MacBooks', 3), ('iPads', 3), ('Accessories', 3),
+('MacBooks', 2),       -- category_id = 4
+('iPads', 2),          -- category_id = 5
+('Accessories', 2),    -- category_id = 6
 -- Other
-('Gaming', 4), ('Storage', 4), ('Networking', 4);
+('Gaming', 3),         -- category_id = 7
+('Storage', 3),        -- category_id = 8
+('Networking', 3);     -- category_id = 9
 
 /* ----- Products (belong to categories) ----- */
 CREATE TABLE products (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     description TEXT,
+    long_description TEXT,
     price DECIMAL(10, 2) NOT NULL,
 	discount_percent DECIMAL(5,2) DEFAULT 0,
     image VARCHAR(255),
@@ -46,23 +52,72 @@ CREATE TABLE products (
     FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
 
--- Sample products
-INSERT INTO products (name, description, price, image, category_id, discount_percent) VALUES
-('Gaming Laptop 17”', 'RTX 4070, 1 TB SSD, 16 GB RAM', 1499.99, 'gaming-laptop.jpg', 5, 10.00),
-('Ultra-Slim 14” Ultrabook', 'OLED display, 512 GB SSD, 16 GB RAM', 999.99, 'ultrabook.jpg', 5, 0.00),
-('Beast Tower X', 'Ryzen 9, RTX 4090, liquid cooled desktop', 2799.00, 'desktop-tower.jpg', 4, 12.50),
-('MacBook Air M3', '13-inch, 8-core GPU, 256 GB SSD', 1199.00, 'mba-m3.jpg', 7, 0.00),
-('PlayStation 5 Console', 'Latest Slim edition, 1 TB SSD', 499.99, 'ps5.jpg', 10, 5.00),
-('Custom RGB Gaming PC', 'i9, RTX 4080, 2 TB SSD, liquid cooling', 2499.00, 'rgb-desktop.jpg', 4, 0.00),
-('Budget Home Laptop', '15.6”, Intel i3, 256 GB SSD, 8 GB RAM', 449.00, 'budget-laptop.jpg', 5, 15.00),
-('MacBook Pro M3', '16”, 12-core CPU, 512 GB SSD', 2399.00, 'mbp-m3.jpg', 7, 8.00),
-('iPad Pro 11”', 'M2 chip, 256 GB, Wi-Fi + Cellular', 999.00, 'ipad-pro.jpg', 8, 0.00),
-('Wireless Gaming Mouse', 'RGB, 16000 DPI, rechargeable', 79.99, 'gaming-mouse.jpg', 6, 20.00),
-('External SSD 1TB', 'USB-C, rugged build, 1050 MB/s read', 129.99, 'external-ssd.jpg', 11, 0.00),
-('AX5400 Wi-Fi 6 Router', 'Tri-band, mesh-ready, mobile app control', 199.00, 'wifi6-router.jpg', 12, 0.00),
-('Clearance Ultrabook', 'Older gen, 256 GB SSD, slim profile', 399.00, 'clearance-laptop.jpg', 2, 25.00);
+-- Sample products with technical long_descriptions
+INSERT INTO products (name, description, long_description, price, image, category_id, discount_percent) VALUES
+('Gaming Laptop 17”',
+ 'RTX 4070, 1 TB SSD, 16 GB RAM',
+ 'This high-performance gaming laptop features an NVIDIA RTX 4070 GPU, Intel i7 13th Gen processor, 1 TB NVMe SSD, and 16 GB DDR5 RAM. Comes with a 17.3" FHD 144Hz display, RGB backlit keyboard, and dual-fan cooling system.',
+ 1499.99, 'gaming-laptop.jpg', 2, 10.00),
 
+('Ultra-Slim 14” Ultrabook',
+ 'OLED display, 512 GB SSD, 16 GB RAM',
+ 'Designed for professionals, this ultrabook includes a 14-inch OLED touchscreen, Intel Evo-certified i5 CPU, 512 GB SSD, and 16 GB LPDDR5 RAM. Just 2.2 lbs, with Wi-Fi 6E and Thunderbolt 4 support.',
+ 999.99, 'ultrabook.jpg', 2, 0.00),
 
+('Beast Tower X',
+ 'Ryzen 9, RTX 4090, liquid cooled desktop',
+ 'Desktop powerhouse built with AMD Ryzen 9 7950X, NVIDIA RTX 4090, 64 GB DDR5 RAM, and 2 TB Gen 4 NVMe SSD. Includes custom liquid cooling and a tempered glass case with RGB lighting.',
+ 2799.00, 'desktop-tower.jpg', 1, 12.50),
+
+('MacBook Air M3',
+ '13-inch, 8-core GPU, 256 GB SSD',
+ 'The Apple MacBook Air M3 features Apple Silicon M3 chip with 8-core GPU, 8 GB unified memory, and 256 GB SSD. Lightweight (2.7 lbs), fanless design, Retina display, and up to 18 hours battery.',
+ 1199.00, 'mba-m3.jpg', 4, 0.00),
+
+('PlayStation 5 Console',
+ 'Latest Slim edition, 1 TB SSD',
+ 'Sony PS5 Slim with 1 TB SSD, DualSense controller, ray tracing support, haptic feedback, 3D audio, and backward compatibility with PS4 games. Supports 4K gaming.',
+ 499.99, 'ps5.jpg', 7, 5.00),
+
+('Custom RGB Gaming PC',
+ 'i9, RTX 4080, 2 TB SSD, liquid cooling',
+ 'Built-to-order PC with Intel Core i9-13900K, RTX 4080 16GB GPU, 32 GB DDR5, 2 TB Gen 4 SSD, and a 1000W PSU. Housed in a mid-tower case with RGB front fans and AIO liquid cooler.',
+ 2499.00, 'rgb-desktop.jpg', 1, 0.00),
+
+('Budget Home Laptop',
+ '15.6”, Intel i3, 256 GB SSD, 8 GB RAM',
+ 'Affordable 15.6" laptop with Intel Core i3 processor, 256 GB SSD, and 8 GB RAM. Ideal for students and home use. Comes with Windows 11 Home and a full-size keyboard with numpad.',
+ 449.00, 'budget-laptop.jpg', 2, 15.00),
+
+('MacBook Pro M3',
+ '16”, 12-core CPU, 512 GB SSD',
+ 'Apple MacBook Pro with M3 Pro chip, 12-core CPU, 18-core GPU, 16 GB unified memory, 512 GB SSD. Features 16.2-inch Liquid Retina XDR display, 1080p webcam, and 3 Thunderbolt 4 ports.',
+ 2399.00, 'mbp-m3.jpg', 4, 8.00),
+
+('iPad Pro 11”',
+ 'M2 chip, 256 GB, Wi-Fi + Cellular',
+ 'Apple iPad Pro 11" (4th Gen) with M2 chip, 256 GB storage, Wi-Fi + Cellular (5G), Liquid Retina display with ProMotion, Face ID, and Pencil 2 support.',
+ 999.00, 'ipad-pro.jpg', 5, 0.00),
+
+('Wireless Gaming Mouse',
+ 'RGB, 16000 DPI, rechargeable',
+ 'Ergonomic gaming mouse with 16000 DPI optical sensor, adjustable RGB zones, 6 programmable buttons, and rechargeable battery (70 hours). Supports Windows, macOS, and Linux.',
+ 79.99, 'gaming-mouse.jpg', 3, 20.00),
+
+('External SSD 1TB',
+ 'USB-C, rugged build, 1050 MB/s read',
+ 'Portable external SSD with 1 TB capacity, USB 3.2 Gen 2 (USB-C), read speeds up to 1050 MB/s. Shock-resistant rubber casing and included USB-C to A adapter.',
+ 129.99, 'external-ssd.jpg', 8, 0.00),
+
+('AX5400 Wi-Fi 6 Router',
+ 'Tri-band, mesh-ready, mobile app control',
+ 'Next-gen Wi-Fi 6 AX5400 router with tri-band support, OFDMA, MU-MIMO, and 5GHz prioritization. Easy setup via app, supports mesh networking and smart home integrations.',
+ 199.00, 'wifi6-router.jpg', 9, 0.00),
+
+('Clearance Ultrabook',
+ 'Older gen, 256 GB SSD, slim profile',
+ 'Last-gen ultrabook featuring Intel i5-10th Gen, 256 GB SSD, 8 GB RAM, and a 14-inch FHD screen. Slim design, HDMI output, and lightweight build. Limited stock.',
+ 399.00, 'clearance-laptop.jpg', 2, 25.00);
 
 
 /* ============================== */
@@ -82,7 +137,8 @@ CREATE TABLE user_account (
 CREATE TABLE cart (
     cart_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
-    product_id INT,
+    session_id VARCHAR(255), -- for guests
+    product_id INT NOT NULL,
     quantity INT DEFAULT 1,
     FOREIGN KEY (user_id) REFERENCES user_account(user_id),
     FOREIGN KEY (product_id) REFERENCES products(product_id)

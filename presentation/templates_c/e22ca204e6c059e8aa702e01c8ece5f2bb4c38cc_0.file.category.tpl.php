@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.5, created on 2025-06-26 03:10:43
+/* Smarty version 4.5.5, created on 2025-06-26 05:41:34
   from 'C:\Users\bresn\OneDrive\Documents\GitHub\NewarkIT-Ecommerce-Site\presentation\templates\pages\category.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.5',
-  'unifunc' => 'content_685c9e13e17708_43920035',
+  'unifunc' => 'content_685cc16ebe89b4_65251425',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e22ca204e6c059e8aa702e01c8ece5f2bb4c38cc' => 
     array (
       0 => 'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\presentation\\templates\\pages\\category.tpl',
-      1 => 1750900153,
+      1 => 1750906416,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_685c9e13e17708_43920035 (Smarty_Internal_Template $_smarty_tpl) {
+function content_685cc16ebe89b4_65251425 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),1=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),2=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.number_format.php','function'=>'smarty_modifier_number_format',),));
 ?>
 <h1 class="mb-4"><?php echo $_smarty_tpl->tpl_vars['categoryName']->value;?>
 </h1>
-
+<hr>
 <?php if (smarty_modifier_count($_smarty_tpl->tpl_vars['products']->value) > 0) {?>
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <?php

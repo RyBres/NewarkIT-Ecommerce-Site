@@ -1,4 +1,5 @@
 <h1 class="mb-4">Our Services</h1>
+<hr>
 <p>We offer professional tech support, installation, and device consulting. Whether you're setting up a new system or need a virus cleanup, our certified staff are ready to help.</p>
 
 <ul>

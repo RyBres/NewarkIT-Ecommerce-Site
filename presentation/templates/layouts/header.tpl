@@ -18,11 +18,11 @@
   <div class="container d-flex justify-content-between align-items-center" >
     <!-- Logo -->
 	<a href="../public/index.php">
-	  <img src="../images/newark-it-logo.png" alt="Newark IT" class="img-fluid" style="max-height: 70px;">
+	  <img src="../images/newark-it-logo.png" alt="Newark IT" class="img-fluid" style="max-height: 80px;">
 	</a>
 
     <!-- Search Bar -->
-    <form class="d-flex w-50" method="get" action="/search.php">
+    <form class="d-flex w-50" method="get" action="../public/search.php">
       <input class="form-control me-2" type="search" name="q" placeholder="Search products..." aria-label="Search">
       <button class="btn btn-primary" type="submit">
 	  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="vertical-align: -0.1em;" class="bi bi-search" viewBox="0 0 16 16">
@@ -39,7 +39,7 @@
 		</svg>
 	  Login
 	  </a>
-      <a href="/cart.php" class="btn btn-success">
+      <a href="../public/cart/view.php" class="btn btn-success">
 	  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" style="vertical-align: -0.1em;" class="bi bi-cart" viewBox="0 0 16 16">
 			::before
 			<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
@@ -63,6 +63,12 @@
 			  {if $dept.name == 'Services'}
 				<li class="nav-item">
 				  <a class="nav-link" style="width:125px !important; min-width:125px !important;" href="/NewarkIT-Ecommerce-Site/public/services.php">
+				    <strong>{$dept.name}</strong>
+				  </a> <!-- MOVE THIS TO STYLES -->
+				</li>
+			  {elseif $dept.name == 'Deals'}
+				<li class="nav-item">
+				  <a class="nav-link" style="width:125px !important; min-width:125px !important;" href="/NewarkIT-Ecommerce-Site/public/deals.php">
 				    <strong>{$dept.name}</strong>
 				  </a> <!-- MOVE THIS TO STYLES -->
 				</li>
