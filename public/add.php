@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../../include/db.php';
+require_once '../include/db.php';
 
 $product_id = (int) $_POST['product_id'];
 $quantity = (int) $_POST['quantity'];
@@ -25,6 +25,6 @@ if ($row = $result->fetch_assoc()) {
     $insert->execute();
 }
 
-header("Location: ../cart/view.php");
+header("Location: ../public/view.php");
 exit;
 ?>

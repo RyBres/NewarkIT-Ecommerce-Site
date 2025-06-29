@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.5, created on 2025-06-26 05:37:22
+/* Smarty version 4.5.5, created on 2025-06-29 02:13:13
   from 'C:\Users\bresn\OneDrive\Documents\GitHub\NewarkIT-Ecommerce-Site\presentation\templates\pages\cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.5',
-  'unifunc' => 'content_685cc072d98313_58782719',
+  'unifunc' => 'content_686085197a21a9_43155844',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e989caaedb0c12aefd765cb6c8827ff3fc09655b' => 
     array (
       0 => 'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\presentation\\templates\\pages\\cart.tpl',
-      1 => 1750907528,
+      1 => 1751155986,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_685cc072d98313_58782719 (Smarty_Internal_Template $_smarty_tpl) {
+function content_686085197a21a9_43155844 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),1=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.number_format.php','function'=>'smarty_modifier_number_format',),));
 ?>
 <div class="container py-4">
@@ -47,7 +47,7 @@ $_smarty_tpl->tpl_vars['item']->do_else = false;
 ?>
         <tr>
           <td style="width: 100px;">
-            <img src="/images/products/<?php echo $_smarty_tpl->tpl_vars['item']->value['image'];?>
+            <img src="../images/products/<?php echo $_smarty_tpl->tpl_vars['item']->value['image'];?>
 " alt="<?php echo $_smarty_tpl->tpl_vars['item']->value['name'];?>
 " class="img-fluid rounded shadow-sm">
           </td>
@@ -62,17 +62,17 @@ $_smarty_tpl->tpl_vars['item']->do_else = false;
 
               </span>
             <?php } else { ?>
-              <span class="fw-bold">$<?php echo $_smarty_tpl->tpl_vars['item']->value['price'];?>
+              <span class="fw-bold">$<?php echo smarty_modifier_number_format($_smarty_tpl->tpl_vars['item']->value['price'],2);?>
 </span>
             <?php }?>
           </td>
           <td>
-            <form method="post" action="/cart/update.php" class="d-flex">
+            <form method="post" action="../public/update.php" class="d-flex">
               <input type="hidden" name="product_id" value="<?php echo $_smarty_tpl->tpl_vars['item']->value['product_id'];?>
 ">
               <input type="number" name="quantity" value="<?php echo $_smarty_tpl->tpl_vars['item']->value['quantity'];?>
 " class="form-control form-control-sm me-2" style="width: 70px;" min="1">
-              <button type="submit" class="btn btn-outline-primary btn-sm">Update</button>
+              <button type="submit" class="btn btn-primary btn-sm">Update</button>
             </form>
           </td>
           <td class="fw-bold">
@@ -80,10 +80,10 @@ $_smarty_tpl->tpl_vars['item']->do_else = false;
 
           </td>
           <td>
-            <form method="post" action="/cart/remove.php">
+            <form method="post" action="../public/remove.php">
               <input type="hidden" name="product_id" value="<?php echo $_smarty_tpl->tpl_vars['item']->value['product_id'];?>
 ">
-              <button type="submit" class="btn btn-sm btn-outline-danger">×</button>
+              <button type="submit" class="btn btn-sm btn-danger">Remove</button>
             </form>
           </td>
         </tr>
@@ -102,7 +102,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </table>
 
     <div class="text-end">
-      <a href="/checkout.php" class="btn btn-success btn-lg">Proceed to Checkout</a>
+      <a href="../public/checkout.php" class="btn btn-success btn-lg">Proceed to Checkout</a>
     </div>
   <?php } else { ?>
     <p>Your cart is currently empty.</p>

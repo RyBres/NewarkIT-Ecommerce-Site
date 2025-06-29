@@ -24,6 +24,9 @@ $smarty->assign('title', $product['name']);
 $smarty->assign('product', $product);
 $smarty->assign('navCats', getNavCategories($conn));
 
+$smarty->assign('user_logged_in', isset($_SESSION['user_id']));
+$smarty->assign('user_name', $_SESSION['user_name'] ?? '');
+
 $smarty->display('layouts/header.tpl');
 $smarty->display('pages/product.tpl');
 $smarty->display('layouts/footer.tpl');

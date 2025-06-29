@@ -19,7 +19,7 @@
           <span class="fw-bold">${$product.price}</span>
         {/if}
       </p>
-	  <form method="post" action="../public/cart/add.php" class="mt-3">
+	  <form method="post" action="../public/add.php" class="mt-3">
 	    <input type="hidden" name="product_id" value="{$product.product_id}">
 	    <div class="input-group" style="max-width: 160px;">
 	      <input type="number" name="quantity" value="1" min="1" class="form-control">

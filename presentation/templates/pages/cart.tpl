@@ -17,7 +17,7 @@
         {foreach $cart_items as $item}
         <tr>
           <td style="width: 100px;">
-            <img src="/images/products/{$item.image}" alt="{$item.name}" class="img-fluid rounded shadow-sm">
+            <img src="../images/products/{$item.image}" alt="{$item.name}" class="img-fluid rounded shadow-sm">
           </td>
           <td>{$item.name}</td>
           <td>
@@ -27,23 +27,23 @@
                 ${$item.price - ($item.price * $item.discount_percent / 100)|number_format:2}
               </span>
             {else}
-              <span class="fw-bold">${$item.price}</span>
+              <span class="fw-bold">${$item.price|number_format:2}</span>
             {/if}
           </td>
           <td>
-            <form method="post" action="/cart/update.php" class="d-flex">
+            <form method="post" action="../public/update.php" class="d-flex">
               <input type="hidden" name="product_id" value="{$item.product_id}">
               <input type="number" name="quantity" value="{$item.quantity}" class="form-control form-control-sm me-2" style="width: 70px;" min="1">
-              <button type="submit" class="btn btn-outline-primary btn-sm">Update</button>
+              <button type="submit" class="btn btn-primary btn-sm">Update</button>
             </form>
           </td>
           <td class="fw-bold">
             ${$item.subtotal|number_format:2}
           </td>
           <td>
-            <form method="post" action="/cart/remove.php">
+            <form method="post" action="../public/remove.php">
               <input type="hidden" name="product_id" value="{$item.product_id}">
-              <button type="submit" class="btn btn-sm btn-outline-danger">×</button>
+              <button type="submit" class="btn btn-sm btn-danger">Remove</button>
             </form>
           </td>
         </tr>
@@ -59,7 +59,7 @@
     </table>
 
     <div class="text-end">
-      <a href="/checkout.php" class="btn btn-success btn-lg">Proceed to Checkout</a>
+      <a href="../public/checkout.php" class="btn btn-success btn-lg">Proceed to Checkout</a>
     </div>
   {else}
     <p>Your cart is currently empty.</p>
