@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once '../include/db.php';
 require_once '../include/smarty.php';
 require_once '../include/functions.php';

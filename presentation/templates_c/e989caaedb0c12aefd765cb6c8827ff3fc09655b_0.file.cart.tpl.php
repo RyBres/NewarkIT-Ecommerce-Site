@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.5, created on 2025-06-29 02:13:13
+/* Smarty version 4.5.5, created on 2025-06-30 15:51:56
   from 'C:\Users\bresn\OneDrive\Documents\GitHub\NewarkIT-Ecommerce-Site\presentation\templates\pages\cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.5',
-  'unifunc' => 'content_686085197a21a9_43155844',
+  'unifunc' => 'content_6862967c8ab6e4_18995384',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e989caaedb0c12aefd765cb6c8827ff3fc09655b' => 
     array (
       0 => 'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\presentation\\templates\\pages\\cart.tpl',
-      1 => 1751155986,
+      1 => 1751291512,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_686085197a21a9_43155844 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6862967c8ab6e4_18995384 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),1=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.number_format.php','function'=>'smarty_modifier_number_format',),));
 ?>
-<div class="container py-4">
-  <h2 class="mb-4">Your Cart</h2>
-
+<div class="container">
+  <h1 class="mb-4">Your Cart</h1>
+  <hr>
   <?php if (smarty_modifier_count($_smarty_tpl->tpl_vars['cart_items']->value) > 0) {?>
     <table class="table align-middle">
       <thead class="table-light">

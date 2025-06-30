@@ -1,6 +1,6 @@
-<div class="container py-4">
-  <h2 class="mb-4">Your Cart</h2>
-
+<div class="container">
+  <h1 class="mb-4">Your Cart</h1>
+  <hr>
   {if $cart_items|@count > 0}
     <table class="table align-middle">
       <thead class="table-light">

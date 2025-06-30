@@ -1,11 +1,10 @@
 Project Notes
 - Ensure you can check with phone and that it's not totally broken when you do
-- Obviously finish my cart, checkout, and login
-- Frame behind carousel is fixed height so when minimized is screwed up
-- Add stock of product to db
 - Perhaps add more visual elements, or conditional homepage elements if logged in
-- Better footer with more info
 - Clean up code. i.e., make product grid modular, move all inline styles to css file
-- Maybe add an email or some other way of contacting. Email via chatbox would be nice.
 - Snaky link thing at top left of page showing where you are would be good
-- Login details should be hashed
+- Get both first and last name, or at least parse it
+- inventory DB, and show how many items are left if low on product page
+- Confirmation email and receipt after purchase
+- Better my account page and more info (and more granular)
+- Standard picture size on product pages

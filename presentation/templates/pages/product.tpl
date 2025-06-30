@@ -11,12 +11,12 @@
 	  <p class="mt-3">{$product.long_description|escape}</p>
       <p class="fs-4">
         {if $product.discount_percent > 0}
-          <span class="text-muted text-decoration-line-through">${$product.price}</span>
+          <span class="text-muted text-decoration-line-through">${$product.price|number_format:2}</span>
           <span class="text-danger fw-bold">
-            ${$product.price - ($product.price * $product.discount_percent / 100)|number_format:2}
+            ${($product.price - ($product.price * $product.discount_percent / 100))|number_format:2}
           </span>
         {else}
-          <span class="fw-bold">${$product.price}</span>
+          <span class="fw-bold">${$product.price|number_format:2}</span>
         {/if}
       </p>
 	  <form method="post" action="../public/add.php" class="mt-3">

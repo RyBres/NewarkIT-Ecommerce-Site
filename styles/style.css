@@ -5,12 +5,37 @@ body {
   font-size: 16px;
   color: #212529;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
 
+body > .container, main {
+  flex: 1 0 auto; /* allow content to grow and push footer down */
+}
+
+footer {
+  flex-shrink: 0; /* footer doesn't shrink */
+}
 /* Top header */
+
 .top-header {
 	background-color: #000;
 	color: white;
 }
+
+.top-header .d-flex.align-items-center {
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+
+.top-header .btn {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .top-header a {
 	color:white;
 	text-decoration: none;
@@ -18,6 +43,16 @@ body {
 .top-header a:hover {
 	color: #ccc;
 }
+
+.fixed-button {
+  min-width: 110px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+/* Footer */
+
 
 /* Text elements */
 h1 {
@@ -116,11 +151,29 @@ h1 {
 .carousel-frame {
   border: 4px solid #ccc;
   border-radius: 20px;
-  padding: 4px;
   background: linear-gradient(145deg, #c0c0c0, #e6e6e6, #c0c0c0);
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.15),
               inset 0 0 8px rgba(255, 255, 255, 0.3);
+  padding: 0;               /* Ensure no added spacing */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%; /* or try 3% */
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  border-radius: 50%;
+  filter: drop-shadow(0 0 5px black);
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
 
 .carousel-item {
   margin-bottom: 0;
@@ -128,11 +181,15 @@ h1 {
 
 .carousel-frame img,
 .carousel-item img {
-  display: block;
   width: 100%;
   height: auto;
-  max-height: 100%;
-  object-fit: contain;
+  display: block;
   margin: 0 auto;
-  vertical-align: middle;
 }
+
+.navbar-nav .nav-link .deals-glow {
+  color: #00ff00 !important;
+  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
+  font-weight: 700;
+}
+

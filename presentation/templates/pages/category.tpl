@@ -16,10 +16,10 @@
               {if $product.discount_percent > 0}
                 <span class="text-muted text-decoration-line-through">${$product.price}</span>
                 <span class="text-danger fw-bold">
-                  ${$product.price - ($product.price * $product.discount_percent / 100)|number_format:2}
+                  ${($product.price - ($product.price * $product.discount_percent / 100))|number_format:2}
                 </span>
               {else}
-                <span class="fw-bold">${$product.price}</span>
+                <span class="fw-bold">${$product.price|number_format:2}</span>
               {/if}
             </p>
             <a href="product.php?id={$product.product_id}" class="btn btn-primary">View Product</a>

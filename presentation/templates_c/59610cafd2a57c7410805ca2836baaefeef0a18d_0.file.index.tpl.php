@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.5, created on 2025-06-26 05:37:21
+/* Smarty version 4.5.5, created on 2025-06-30 04:44:56
   from 'C:\Users\bresn\OneDrive\Documents\GitHub\NewarkIT-Ecommerce-Site\presentation\templates\pages\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.5',
-  'unifunc' => 'content_685cc07180a5e6_84756469',
+  'unifunc' => 'content_6861fa28407a36_46533966',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '59610cafd2a57c7410805ca2836baaefeef0a18d' => 
     array (
       0 => 'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\presentation\\templates\\pages\\index.tpl',
-      1 => 1750900530,
+      1 => 1751251491,
       2 => 'file',
     ),
   ),
@@ -20,36 +20,36 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_685cc07180a5e6_84756469 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6861fa28407a36_46533966 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),1=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),2=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.number_format.php','function'=>'smarty_modifier_number_format',),));
 ?>
 
-<div class="carousel-frame mb-4" style="height: 425px;">
-	<div id="homepageCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
-	  <div class="carousel-inner">
-		<div class="carousel-item active">
-		  <img src="../images/banner-1.png" class="d-block w-100" alt="Banner 1">
-		</div>
-		<div class="carousel-item">
-		  <img src="../images/banner-2.png" class="d-block w-100" alt="Banner 2">
-		</div>
-		<div class="carousel-item">
-		  <img src="../images/banner-3.png" class="d-block w-100" alt="Banner 3">
-		</div>
-	  </div>
+<div class="carousel-frame mb-4">
+  <div id="homepageCarousel" class="carousel slide mb-0" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../images/banner-1.png" class="d-block w-100" alt="Banner 1">
+      </div>
+      <div class="carousel-item">
+        <img src="../images/banner-2.png" class="d-block w-100" alt="Banner 2">
+      </div>
+      <div class="carousel-item">
+        <img src="../images/banner-3.png" class="d-block w-100" alt="Banner 3">
+      </div>
+    </div>
 
-	  <!-- Arrows -->
-	  <button class="carousel-control-prev" type="button" data-bs-target="#homepageCarousel" data-bs-slide="prev">
-		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		<span class="visually-hidden">Previous</span>
-	  </button>
-
-	  <button class="carousel-control-next" type="button" data-bs-target="#homepageCarousel" data-bs-slide="next">
-		<span class="carousel-control-next-icon" aria-hidden="true"></span>
-		<span class="visually-hidden">Next</span>
-	  </button>
-	</div>
+    <!-- Arrows -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#homepageCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#homepageCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 </div>
+
 
 <h3 style="color: #000;">Featured Offers</h3>
 <p style="color: #000;">Order online or in-store for the best deals on new tech. For a limited time only.</p>
@@ -79,14 +79,14 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
 </p>
           <p class="card-text">
 		  <?php if ($_smarty_tpl->tpl_vars['product']->value['discount_percent'] > 0) {?>
-			<span class="text-muted text-decoration-line-through">$<?php echo $_smarty_tpl->tpl_vars['product']->value['price'];?>
+			<span class="text-muted text-decoration-line-through">$<?php echo smarty_modifier_number_format($_smarty_tpl->tpl_vars['product']->value['price'],2);?>
 </span>
 			<span class="text-danger fw-bold">
-			  $<?php echo $_smarty_tpl->tpl_vars['product']->value['price']-smarty_modifier_number_format(($_smarty_tpl->tpl_vars['product']->value['price']*$_smarty_tpl->tpl_vars['product']->value['discount_percent']/100),2);?>
+			  $<?php echo smarty_modifier_number_format(($_smarty_tpl->tpl_vars['product']->value['price']-($_smarty_tpl->tpl_vars['product']->value['price']*$_smarty_tpl->tpl_vars['product']->value['discount_percent']/100)),2);?>
 
 			</span>
 		  <?php } else { ?>
-			<span class="fw-bold">$<?php echo $_smarty_tpl->tpl_vars['product']->value['price'];?>
+			<span class="fw-bold">$<?php echo smarty_modifier_number_format($_smarty_tpl->tpl_vars['product']->value['price'],2);?>
 </span>
 		  <?php }?>
 		  </p>

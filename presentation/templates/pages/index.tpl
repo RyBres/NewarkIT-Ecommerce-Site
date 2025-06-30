@@ -1,30 +1,30 @@
 
-<div class="carousel-frame mb-4" style="height: 425px;">
-	<div id="homepageCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
-	  <div class="carousel-inner">
-		<div class="carousel-item active">
-		  <img src="../images/banner-1.png" class="d-block w-100" alt="Banner 1">
-		</div>
-		<div class="carousel-item">
-		  <img src="../images/banner-2.png" class="d-block w-100" alt="Banner 2">
-		</div>
-		<div class="carousel-item">
-		  <img src="../images/banner-3.png" class="d-block w-100" alt="Banner 3">
-		</div>
-	  </div>
+<div class="carousel-frame mb-4">
+  <div id="homepageCarousel" class="carousel slide mb-0" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="../images/banner-1.png" class="d-block w-100" alt="Banner 1">
+      </div>
+      <div class="carousel-item">
+        <img src="../images/banner-2.png" class="d-block w-100" alt="Banner 2">
+      </div>
+      <div class="carousel-item">
+        <img src="../images/banner-3.png" class="d-block w-100" alt="Banner 3">
+      </div>
+    </div>
 
-	  <!-- Arrows -->
-	  <button class="carousel-control-prev" type="button" data-bs-target="#homepageCarousel" data-bs-slide="prev">
-		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		<span class="visually-hidden">Previous</span>
-	  </button>
-
-	  <button class="carousel-control-next" type="button" data-bs-target="#homepageCarousel" data-bs-slide="next">
-		<span class="carousel-control-next-icon" aria-hidden="true"></span>
-		<span class="visually-hidden">Next</span>
-	  </button>
-	</div>
+    <!-- Arrows -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#homepageCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#homepageCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 </div>
+
 
 <h3 style="color: #000;">Featured Offers</h3>
 <p style="color: #000;">Order online or in-store for the best deals on new tech. For a limited time only.</p>
@@ -45,12 +45,12 @@
           <p class="card-text">{$product.description|truncate:100}</p>
           <p class="card-text">
 		  {if $product.discount_percent > 0}
-			<span class="text-muted text-decoration-line-through">${$product.price}</span>
+			<span class="text-muted text-decoration-line-through">${$product.price|number_format:2}</span>
 			<span class="text-danger fw-bold">
-			  ${$product.price - ($product.price * $product.discount_percent / 100)|number_format:2}
+			  ${($product.price - ($product.price * $product.discount_percent / 100))|number_format:2}
 			</span>
 		  {else}
-			<span class="fw-bold">${$product.price}</span>
+			<span class="fw-bold">${$product.price|number_format:2}</span>
 		  {/if}
 		  </p>
           <a href="product.php?id={$product.product_id}" class="btn btn-primary">View Product</a>

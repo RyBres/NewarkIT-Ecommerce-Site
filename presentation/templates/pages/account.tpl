@@ -1,5 +1,5 @@
-<h2 class="mb-4">My Account</h2>
-
+<h1 class="mb-4">My Account</h1>
+<hr>
 <p>Welcome back, {$user_name}!</p>
 
 <ul>
