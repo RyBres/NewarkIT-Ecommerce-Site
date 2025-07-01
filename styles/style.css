@@ -8,8 +8,10 @@ body {
 html, body {
   height: 100%;
   margin: 0;
-  display: flex;
-  flex-direction: column;
+}
+
+html {
+	overflow-y: scroll;
 }
 
 body > .container, main {
@@ -50,8 +52,6 @@ footer {
   flex-shrink: 0;
   flex-grow: 0;
 }
-
-/* Footer */
 
 
 /* Text elements */
@@ -124,37 +124,63 @@ h1 {
   font-size: 0.95rem;
 }
 
-
+/* product cards */
 .card {
+  background: #ffffff; /* Solid white */
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  box-shadow:
+    inset 1px 1px 2px rgba(255, 255, 255, 0.5),
+    4px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   font-weight: 500;
   font-size: 0.95rem;
 }
-.card-title {
-	font-size: 1.2rem;
-	font-weight: 700;
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    inset 1px 1px 2px rgba(255, 255, 255, 0.6),
+    6px 6px 15px rgba(0, 0, 0, 0.15);
 }
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
 .card-text {
-	color: black;
-	font-size: 0.95rem;
+  color: #333;
+  font-size: 0.95rem;
 }
 
 .card-img-top {
-	width: 150px;
+  width: 150px;
+  background-color: transparent; /* No color overlay */
+  box-shadow: none;              /* No shadow around image */
+  padding: 0;                    /* No padding to avoid white box around image */
+  margin-bottom: 0.75rem;
 }
+
+
 
 /* Carousel frame */
 .carousel {
-	border-radius: 20px 20px 20px 20px;
+	border-radius: 20px;
     overflow: hidden;
 }
 
 .carousel-frame {
-  border: 4px solid #ccc;
   border-radius: 20px;
-  background: linear-gradient(145deg, #c0c0c0, #e6e6e6, #c0c0c0);
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15),
-              inset 0 0 8px rgba(255, 255, 255, 0.3);
-  padding: 0;               /* Ensure no added spacing */
+  background: linear-gradient(145deg, #d0d0d0, #f8f8f8, #d0d0d0);
+  border: 4px solid #bbb;
+  box-shadow: 
+    inset 0 2px 5px rgba(255, 255, 255, 0.5),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.1),
+    0 6px 10px rgba(0, 0, 0, 0.15);
+  padding: 5px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -193,3 +219,242 @@ h1 {
   font-weight: 700;
 }
 
+/* Buttons */
+
+.btn-primary {
+  background: linear-gradient(to bottom, #4da6ff, #007bff);
+  border: 1px solid #0056b3;
+  border-radius: 10px;
+  color: white;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+              0 4px 6px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to bottom, #66b3ff, #0069d9);
+}
+
+.btn-primary:active {
+  background: #0056b3;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.4);
+  transform: translateY(1px);
+}
+
+.btn-danger {
+  background: linear-gradient(to bottom, #ff4d4d, #cc0000);
+  border: 1px solid #990000;
+  border-radius: 10px;
+  color: white;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+              0 4px 6px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
+.btn-danger:hover {
+  background: linear-gradient(to bottom, #ff6666, #b30000);
+}
+
+.btn-danger:active {
+  background: linear-gradient(to bottom, #b30000, #990000);
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.4);
+  transform: translateY(1px);
+}
+
+
+.btn-success {
+  background: linear-gradient(to bottom, #66cc66, #28a745);
+  border: 1px solid #1c7430;
+  border-radius: 10px;
+  color: white;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4),
+              0 4px 6px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
+.btn-success:hover {
+  background: linear-gradient(to bottom, #7cd97c, #218838);
+}
+
+.btn-success:active {
+  background: linear-gradient(to bottom, #218838, #1c7430);
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.4);
+  transform: translateY(1px);
+}
+
+
+
+/* Search bar */
+/* Container input group styling */
+.input-group {
+  border-radius: 12px;
+  box-shadow:
+    inset 1px 1px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.1),
+    3px 3px 8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+/* Input field */
+.input-group .form-control {
+  border: none;
+  border-radius: 0;
+  background: linear-gradient(to bottom, #f0f0f0, #dcdcdc);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: #333;
+  padding: 0.5rem 1rem;
+}
+
+.input-group .form-control:focus {
+  outline: none;
+  box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.25);
+  background: #ffffff;
+}
+
+/* Submit button */
+.input-group .btn-primary {
+  background: linear-gradient(to bottom, #4dabf7, #228be6);
+  border: 1px solid #1c7ed6;
+  border-left: none;
+  border-radius: 0;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 4px rgba(0,0,0,0.2);
+  color: white;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 0.75rem;
+}
+
+.input-group .btn-primary:hover {
+  background: linear-gradient(to bottom, #5dc1ff, #1a6fcb);
+}
+
+.input-group .btn-primary:active {
+  background: #1c7ed6;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+  transform: translateY(1px);
+}
+.btn-primary:active,
+.input-group .btn-primary:active {
+  background: linear-gradient(to bottom, #1a6fcb, #0b5ed7); /* Full gradient */
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+  transform: translateY(1px);
+  color: white;
+}
+
+/* Services */
+.service-card {
+  height: 300px;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: scale(1.02);
+}
+
+.service-card .card-img {
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+  transition: filter 0.3s ease;
+}
+
+.service-card:hover .card-img {
+  filter: brightness(100%);
+}
+
+/* Apply gradient overlay using ::before */
+.service-card .card-img-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0) 60%);
+  z-index: 0;
+  border-radius: 12px;
+}
+
+/* Text reveal */
+/* Always show the title */
+.service-card .card-title {
+  z-index: 1;
+  position: relative;
+}
+
+/* Hide the description by default */
+.service-card .card-text {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1;
+  position: relative;
+}
+
+/* Show description on hover */
+.service-card:hover .card-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.service-card .card-title,
+.service-card .card-text {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 250;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.service-card .card-title {
+  font-size: 1.2rem;
+  font-weight: 250;
+}
+
+/* Static cards */
+/* Keep skeuomorphic style but disable hover movement for static-card */
+.static-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  box-shadow:
+    inset 1px 1px 2px rgba(255, 255, 255, 0.5),
+    4px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: none !important; /* Remove transition effect */
+}
+
+.static-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.rounded-table-wrapper {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    4px 4px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  padding: 0;
+}
+
+.rounded-table-wrapper table {
+  margin: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.rounded-table-wrapper table td:not(:last-child),
+.rounded-table-wrapper table th:not(:last-child) {
+  padding-left: 1rem;
+}

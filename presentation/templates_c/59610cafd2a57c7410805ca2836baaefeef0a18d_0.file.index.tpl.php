@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.5, created on 2025-06-30 04:44:56
+/* Smarty version 4.5.5, created on 2025-07-01 01:26:29
   from 'C:\Users\bresn\OneDrive\Documents\GitHub\NewarkIT-Ecommerce-Site\presentation\templates\pages\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.5',
-  'unifunc' => 'content_6861fa28407a36_46533966',
+  'unifunc' => 'content_68631d252ad543_70433320',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '59610cafd2a57c7410805ca2836baaefeef0a18d' => 
     array (
       0 => 'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\presentation\\templates\\pages\\index.tpl',
-      1 => 1751251491,
+      1 => 1751325987,
       2 => 'file',
     ),
   ),
@@ -20,87 +20,89 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6861fa28407a36_46533966 (Smarty_Internal_Template $_smarty_tpl) {
+function content_68631d252ad543_70433320 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),1=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),2=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.number_format.php','function'=>'smarty_modifier_number_format',),));
 ?>
 
-<div class="carousel-frame mb-4">
-  <div id="homepageCarousel" class="carousel slide mb-0" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../images/banner-1.png" class="d-block w-100" alt="Banner 1">
-      </div>
-      <div class="carousel-item">
-        <img src="../images/banner-2.png" class="d-block w-100" alt="Banner 2">
-      </div>
-      <div class="carousel-item">
-        <img src="../images/banner-3.png" class="d-block w-100" alt="Banner 3">
-      </div>
-    </div>
+<div class="container">
+	<div class="carousel-frame mb-4">
+	  <div id="homepageCarousel" class="carousel slide mb-0" data-bs-ride="carousel">
+		<div class="carousel-inner">
+		  <div class="carousel-item active">
+			<img src="../images/banner-1.png" class="d-block" alt="Banner 1">
+		  </div>
+		  <div class="carousel-item">
+			<img src="../images/banner-2.png" class="d-block" alt="Banner 2">
+		  </div>
+		  <div class="carousel-item">
+			<img src="../images/banner-3.png" class="d-block" alt="Banner 3">
+		  </div>
+		</div>
 
-    <!-- Arrows -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#homepageCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#homepageCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+		<!-- Arrows -->
+		<button class="carousel-control-prev" type="button" data-bs-target="#homepageCarousel" data-bs-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#homepageCarousel" data-bs-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Next</span>
+		</button>
+	  </div>
+	</div>
 </div>
 
+<div class="container">
+	<h3 style="color: #000;">Featured Offers</h3>
+	<p style="color: #000;">Order online or in-store for the best deals on new tech. For a limited time only.</p>
+	<hr>
 
-<h3 style="color: #000;">Featured Offers</h3>
-<p style="color: #000;">Order online or in-store for the best deals on new tech. For a limited time only.</p>
-<hr>
-
-<!-- Product card grid -->
-<?php if (smarty_modifier_count($_smarty_tpl->tpl_vars['products']->value) > 0) {?>
-<div class="row row-cols-1 row-cols-md-3 g-4">
-  <?php
+	<!-- Product card grid -->
+	<?php if (smarty_modifier_count($_smarty_tpl->tpl_vars['products']->value) > 0) {?>
+	<div class="row row-cols-1 row-cols-md-3 g-4">
+	  <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['products']->value, 'product');
 $_smarty_tpl->tpl_vars['product']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['product']->value) {
 $_smarty_tpl->tpl_vars['product']->do_else = false;
 ?>
-    <div class="col">
-      <div class="card h-100 shadow-sm">
-		<?php if ($_smarty_tpl->tpl_vars['product']->value['discount_percent'] > 0) {?>
-		<span class="badge bg-danger position-absolute top-0 end-0 m-2">Sale</span>
-		<?php }?>
-        <img src="../images/products/<?php echo $_smarty_tpl->tpl_vars['product']->value['image'];?>
+		<div class="col">
+		  <div class="card h-100 shadow-sm">
+			<?php if ($_smarty_tpl->tpl_vars['product']->value['discount_percent'] > 0) {?>
+			<span class="badge bg-danger position-absolute top-0 end-0 m-2">Sale</span>
+			<?php }?>
+			<img src="../images/products/<?php echo $_smarty_tpl->tpl_vars['product']->value['image'];?>
 " class="card-img-top mx-auto d-block" alt="<?php echo $_smarty_tpl->tpl_vars['product']->value['name'];?>
 ">
-        <div class="card-body">
-          <h5 class="card-title"><?php echo $_smarty_tpl->tpl_vars['product']->value['name'];?>
+			<div class="card-body">
+			  <h5 class="card-title"><?php echo $_smarty_tpl->tpl_vars['product']->value['name'];?>
 </h5>
-          <p class="card-text"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['product']->value['description'],100);?>
+			  <p class="card-text"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['product']->value['description'],100);?>
 </p>
-          <p class="card-text">
-		  <?php if ($_smarty_tpl->tpl_vars['product']->value['discount_percent'] > 0) {?>
-			<span class="text-muted text-decoration-line-through">$<?php echo smarty_modifier_number_format($_smarty_tpl->tpl_vars['product']->value['price'],2);?>
+			  <p class="card-text">
+			  <?php if ($_smarty_tpl->tpl_vars['product']->value['discount_percent'] > 0) {?>
+				<span class="text-muted text-decoration-line-through">$<?php echo smarty_modifier_number_format($_smarty_tpl->tpl_vars['product']->value['price'],2);?>
 </span>
-			<span class="text-danger fw-bold">
-			  $<?php echo smarty_modifier_number_format(($_smarty_tpl->tpl_vars['product']->value['price']-($_smarty_tpl->tpl_vars['product']->value['price']*$_smarty_tpl->tpl_vars['product']->value['discount_percent']/100)),2);?>
+				<span class="text-danger fw-bold">
+				  $<?php echo smarty_modifier_number_format(($_smarty_tpl->tpl_vars['product']->value['price']-($_smarty_tpl->tpl_vars['product']->value['price']*$_smarty_tpl->tpl_vars['product']->value['discount_percent']/100)),2);?>
 
-			</span>
-		  <?php } else { ?>
-			<span class="fw-bold">$<?php echo smarty_modifier_number_format($_smarty_tpl->tpl_vars['product']->value['price'],2);?>
+				</span>
+			  <?php } else { ?>
+				<span class="fw-bold">$<?php echo smarty_modifier_number_format($_smarty_tpl->tpl_vars['product']->value['price'],2);?>
 </span>
-		  <?php }?>
-		  </p>
-          <a href="product.php?id=<?php echo $_smarty_tpl->tpl_vars['product']->value['product_id'];?>
+			  <?php }?>
+			  </p>
+			  <a href="product.php?id=<?php echo $_smarty_tpl->tpl_vars['product']->value['product_id'];?>
 " class="btn btn-primary">View Product</a>
-        </div>
-      </div>
-    </div>
-  <?php
+			</div>
+		  </div>
+		</div>
+	  <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-</div>
-<?php } else { ?>
-  <p>No products available.</p>
-<?php }?>
-	<?php }
+	</div>
+	<?php } else { ?>
+	  <p>No products available.</p>
+	<?php }?>
+</div><?php }
 }

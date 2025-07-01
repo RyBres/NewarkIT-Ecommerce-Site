@@ -11,9 +11,9 @@
             <h5 class="card-title fw-bold">{$product.name}</h5>
             <p class="card-text">{$product.description|truncate:100}</p>
             <p class="card-text">
-              <span class="text-muted text-decoration-line-through">${$product.price}</span>
+              <span class="text-muted text-decoration-line-through">${$product.price|number_format:2}</span>
               <span class="text-danger fw-bold">
-                ${$product.price - ($product.price * $product.discount_percent / 100)|number_format:2}
+                ${($product.price - ($product.price * $product.discount_percent / 100))|number_format:2}
               </span>
             </p>
             <a href="product.php?id={$product.product_id}" class="btn btn-primary">View Product</a>

@@ -52,6 +52,13 @@ CREATE TABLE products (
     FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
 
+CREATE TABLE inventory (
+    product_id INT PRIMARY KEY,
+    quantity INT NOT NULL DEFAULT 0,
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
+
 -- Sample products with technical long_descriptions
 INSERT INTO products (name, description, long_description, price, image, category_id, discount_percent) VALUES
 ('Gaming Laptop 17”',
@@ -120,6 +127,23 @@ INSERT INTO products (name, description, long_description, price, image, categor
  399.00, 'clearance-laptop.jpg', 2, 25.00);
 
 
+-- Sample inventories
+INSERT INTO inventory (product_id, quantity) VALUES
+(1, 15),
+(2, 5),
+(3, 8),
+(4, 25),
+(5, 2),
+(6, 12),
+(7, 9),
+(8, 7),
+(9, 15),
+(10, 40),
+(11, 20),
+(12, 5),
+(13, 13);
+
+
 /* ============================== */
 /* ========  USER SPACE  ======= */
 /* ============================== */
@@ -127,7 +151,13 @@ INSERT INTO products (name, description, long_description, price, image, categor
 /* ----- Users ----- */
 CREATE TABLE user_account (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100),
+    first_name VARCHAR(100),
+	last_name VARCHAR(100),
+	address_line1 VARCHAR(255),
+	address_line2 VARCHAR(255),
+	city VARCHAR(100),
+	state VARCHAR(100),
+	zip VARCHAR(100),
     email VARCHAR(100) UNIQUE,
     password VARCHAR(255), -- hashed
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP

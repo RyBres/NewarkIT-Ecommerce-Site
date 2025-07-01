@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.5, created on 2025-06-26 05:44:06
+/* Smarty version 4.5.5, created on 2025-07-01 00:36:11
   from 'C:\Users\bresn\OneDrive\Documents\GitHub\NewarkIT-Ecommerce-Site\presentation\templates\pages\deals.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.5',
-  'unifunc' => 'content_685cc2065305b5_11294542',
+  'unifunc' => 'content_6863115ba73d69_82178920',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '81b5ba138aac910396c3e2c0f94d346d0349c960' => 
     array (
       0 => 'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\presentation\\templates\\pages\\deals.tpl',
-      1 => 1750906368,
+      1 => 1751322966,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_685cc2065305b5_11294542 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6863115ba73d69_82178920 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),1=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),2=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.number_format.php','function'=>'smarty_modifier_number_format',),));
 ?>
 <h1 class="mb-4">Hot Deals & Discounts</h1>
@@ -45,10 +45,10 @@ $_smarty_tpl->tpl_vars['product']->do_else = false;
             <p class="card-text"><?php echo smarty_modifier_truncate($_smarty_tpl->tpl_vars['product']->value['description'],100);?>
 </p>
             <p class="card-text">
-              <span class="text-muted text-decoration-line-through">$<?php echo $_smarty_tpl->tpl_vars['product']->value['price'];?>
+              <span class="text-muted text-decoration-line-through">$<?php echo smarty_modifier_number_format($_smarty_tpl->tpl_vars['product']->value['price'],2);?>
 </span>
               <span class="text-danger fw-bold">
-                $<?php echo $_smarty_tpl->tpl_vars['product']->value['price']-smarty_modifier_number_format(($_smarty_tpl->tpl_vars['product']->value['price']*$_smarty_tpl->tpl_vars['product']->value['discount_percent']/100),2);?>
+                $<?php echo smarty_modifier_number_format(($_smarty_tpl->tpl_vars['product']->value['price']-($_smarty_tpl->tpl_vars['product']->value['price']*$_smarty_tpl->tpl_vars['product']->value['discount_percent']/100)),2);?>
 
               </span>
             </p>

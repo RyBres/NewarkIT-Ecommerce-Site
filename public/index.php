@@ -23,7 +23,17 @@ $smarty->assign('title', 'Home');
 
 /* render */
 $smarty->assign('user_logged_in', isset($_SESSION['user_id']));
-$smarty->assign('user_name', $_SESSION['user_name'] ?? '');
+
+if (isset($_SESSION['user_id'])) {
+    $stmt = $conn->prepare("SELECT first_name FROM user_account WHERE user_id = ?");
+    $stmt->bind_param("i", $_SESSION['user_id']);
+    $stmt->execute();
+    $result = $stmt->get_result()->fetch_assoc();
+    $smarty->assign('user_name', $result['first_name'] ?? '');
+} else {
+    $smarty->assign('user_name', '');
+}
+
 
 $smarty->display('layouts/header.tpl');
 $smarty->display('pages/index.tpl');

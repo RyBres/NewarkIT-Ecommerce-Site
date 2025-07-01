@@ -18,4 +18,31 @@ function getNavCategories(mysqli $conn): array
 
     return array_values($nav); // to reindex numerically
 }
+
+function get_cart_items($pdo) {
+    if (isset($_SESSION['user_id'])) {
+        // Logged-in user
+        $stmt = $pdo->prepare("SELECT * FROM cart WHERE user_id = ?");
+        $stmt->execute([$_SESSION['user_id']]);
+    } else {
+        // Guest
+        $stmt = $pdo->prepare("SELECT * FROM cart WHERE session_id = ?");
+        $stmt->execute([$_SESSION['session_id']]);
+    }
+
+    return $stmt->fetchAll();
+}
+
+function handle_login_cart_transition($pdo, $user_id) {
+    // Remove guest cart
+    $stmt = $pdo->prepare("DELETE FROM cart WHERE session_id = ?");
+    $stmt->execute([$_SESSION['session_id']]);
+
+    // Update session
+    $_SESSION['user_id'] = $user_id;
+
+    // (Optional) Load user's cart into session if needed
+}
+
 ?>
+

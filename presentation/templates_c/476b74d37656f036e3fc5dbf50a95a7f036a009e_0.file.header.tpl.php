@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.5, created on 2025-06-30 15:48:38
+/* Smarty version 4.5.5, created on 2025-07-01 07:19:35
   from 'C:\Users\bresn\OneDrive\Documents\GitHub\NewarkIT-Ecommerce-Site\presentation\templates\layouts\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.5',
-  'unifunc' => 'content_686295b6e57c36_25365223',
+  'unifunc' => 'content_68636fe76ab387_70639303',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '476b74d37656f036e3fc5dbf50a95a7f036a009e' => 
     array (
       0 => 'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\presentation\\templates\\layouts\\header.tpl',
-      1 => 1751291315,
+      1 => 1751347173,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_686295b6e57c36_25365223 (Smarty_Internal_Template $_smarty_tpl) {
+function content_68636fe76ab387_70639303 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "site.conf", null, 0);
 ?>
 
@@ -29,7 +29,8 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "site.conf"
   <head>
     <meta charset="UTF-8">
     <title><?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'site_title');?>
-</title>
+.com. Tech you can trust.</title>
+	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
