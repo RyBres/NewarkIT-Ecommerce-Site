@@ -4,11 +4,11 @@ require_once '../include/db.php';
 require_once '../include/smarty.php';
 require_once '../include/functions.php';
 
-/* 1)  grab nav data */
+/* grab nav data */
 $navCats = getNavCategories($conn);
 $smarty->assign('navCats', $navCats);
 
-/* 3)  render */
+/* render */
 $smarty->assign('user_logged_in', isset($_SESSION['user_id']));
 $smarty->assign('user_name', $_SESSION['user_name'] ?? '');
 

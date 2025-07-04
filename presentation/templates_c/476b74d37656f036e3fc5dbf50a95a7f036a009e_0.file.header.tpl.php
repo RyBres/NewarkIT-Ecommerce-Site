@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.5, created on 2025-07-01 07:19:35
+/* Smarty version 4.5.5, created on 2025-07-02 01:54:00
   from 'C:\Users\bresn\OneDrive\Documents\GitHub\NewarkIT-Ecommerce-Site\presentation\templates\layouts\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.5',
-  'unifunc' => 'content_68636fe76ab387_70639303',
+  'unifunc' => 'content_6864751825dc69_81859998',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '476b74d37656f036e3fc5dbf50a95a7f036a009e' => 
     array (
       0 => 'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\presentation\\templates\\layouts\\header.tpl',
-      1 => 1751347173,
+      1 => 1751413219,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_68636fe76ab387_70639303 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6864751825dc69_81859998 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "site.conf", null, 0);
 ?>
 
@@ -31,7 +31,7 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "site.conf"
     <title><?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'site_title');?>
 .com. Tech you can trust.</title>
 	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-    <!-- Bootstrap -->
+    <!-- dependencies -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,14 +40,14 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "site.conf"
   </head>
   <body>
   <div class="d-flex flex-column min-vh-100">
-    <!-- Top Header -->
+    <!-- Top header -->
     <div class="top-header">
       <div class="container d-flex justify-content-between align-items-center py-2" style="white-space: nowrap;">
         <!-- Logo -->
         <a href="../public/index.php">
         <img src="../images/newark-it-logo.png" alt="Newark IT" class="img-fluid" style="max-height: 80px;">
         </a>
-		<!-- Search Bar -->
+		<!-- Search bar -->
 		<form class="w-50 position-relative" method="get" action="../public/search.php" autocomplete="off">
 		  <div class="input-group">
 			<input id="searchInput" type="search" name="q" class="form-control" placeholder="Search Newark IT" aria-label="Search">
@@ -58,11 +58,11 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "site.conf"
 			</button>
 		  </div>
 
-		  <!-- Suggestion Box -->
+		  <!-- Suggestions -->
 		  <ul id="searchSuggestions" class="list-group position-absolute w-100 mt-1 z-3" style="max-height: 250px; overflow-y: auto; display: none;"></ul>
 		</form>
 
-        <!-- Login / Cart -->
+        <!-- Login / cart -->
         <div class="d-flex align-items-center">
           <?php if ($_smarty_tpl->tpl_vars['user_logged_in']->value) {?>
           <span class="me-2 text-end">
@@ -97,7 +97,7 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "site.conf"
         </div>
       </div>
     </div>
-    <!-- Main Navbar -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-black bg-light">
       <div class="container custom-container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
@@ -113,14 +113,14 @@ $_smarty_tpl->tpl_vars['dept']->do_else = false;
 ?>
             <?php if ($_smarty_tpl->tpl_vars['dept']->value['name'] == 'Services') {?>
             <li class="nav-item">
-              <a class="nav-link" style="width:125px !important; min-width:125px !important;" href="/NewarkIT-Ecommerce-Site/public/services.php">
+              <a class="nav-link" style="width:125px !important; min-width:125px !important;" href="../public/services.php">
               <strong><?php echo $_smarty_tpl->tpl_vars['dept']->value['name'];?>
 </strong>
               </a> <!-- MOVE THIS TO STYLES -->
             </li>
 			<?php } elseif ($_smarty_tpl->tpl_vars['dept']->value['name'] == 'Deals') {?>
 			<li class="nav-item">
-			  <a class="nav-link" style="width:125px !important; min-width:125px !important;" href="/NewarkIT-Ecommerce-Site/public/deals.php">
+			  <a class="nav-link" style="width:125px !important; min-width:125px !important;" href="../public/deals.php">
 				<strong><?php echo $_smarty_tpl->tpl_vars['dept']->value['name'];?>
 </strong>
 			  </a>
@@ -152,7 +152,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
           </ul>
-          <!-- Support Blurb -->
+          <!-- Support text -->
           <span class="navbar-text text-black ms-auto d-none d-lg-block">
             Questions or concerns? Call toll-free at <strong>1-800-555-TECH</strong>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" style="vertical-align: -0.25em;" class="bi bi-phone" viewBox="0 0 16 16">
@@ -163,6 +163,5 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
       </div>
     </nav>
-    <!-- Main Page Content Container -->
     <div class="container mt-4"><?php }
 }

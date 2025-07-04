@@ -11,7 +11,7 @@ $smarty->assign('title', 'Register');
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Sanitize and gather input
+    // gather input
     $first_name = trim($_POST['first_name']);
     $last_name = trim($_POST['last_name']);
     $email = trim($_POST['email']);
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $conn->insert_id;
             $_SESSION['user_name'] = $first_name;
 
-            header("Location: /NewarkIT-Ecommerce-Site/public/index.php");
+            header("Location: ../public/index.php");
             exit;
         }
     }

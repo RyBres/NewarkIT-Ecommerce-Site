@@ -61,25 +61,15 @@ CREATE TABLE inventory (
 
 -- Sample products with technical long_descriptions
 INSERT INTO products (name, description, long_description, price, image, category_id, discount_percent) VALUES
-('Gaming Laptop 17”',
+('Gaming Laptop 17-inch',
  'RTX 4070, 1 TB SSD, 16 GB RAM',
- 'This high-performance gaming laptop features an NVIDIA RTX 4070 GPU, Intel i7 13th Gen processor, 1 TB NVMe SSD, and 16 GB DDR5 RAM. Comes with a 17.3" FHD 144Hz display, RGB backlit keyboard, and dual-fan cooling system.',
+ 'This high-performance gaming laptop features an NVIDIA RTX 4070 GPU, Intel i7 13th Gen processor, 1 TB NVMe SSD, and 16 GB DDR5 RAM. Comes with a 17.3-inch FHD 144Hz display, RGB backlit keyboard, and dual-fan cooling system.',
  1499.99, 'gaming-laptop.jpg', 2, 10.00),
-
-('Ultra-Slim 14” Ultrabook',
- 'OLED display, 512 GB SSD, 16 GB RAM',
- 'Designed for professionals, this ultrabook includes a 14-inch OLED touchscreen, Intel Evo-certified i5 CPU, 512 GB SSD, and 16 GB LPDDR5 RAM. Just 2.2 lbs, with Wi-Fi 6E and Thunderbolt 4 support.',
- 999.99, 'ultrabook.jpg', 2, 0.00),
 
 ('Beast Tower X',
  'Ryzen 9, RTX 4090, liquid cooled desktop',
  'Desktop powerhouse built with AMD Ryzen 9 7950X, NVIDIA RTX 4090, 64 GB DDR5 RAM, and 2 TB Gen 4 NVMe SSD. Includes custom liquid cooling and a tempered glass case with RGB lighting.',
  2799.00, 'desktop-tower.jpg', 1, 12.50),
-
-('MacBook Air M3',
- '13-inch, 8-core GPU, 256 GB SSD',
- 'The Apple MacBook Air M3 features Apple Silicon M3 chip with 8-core GPU, 8 GB unified memory, and 256 GB SSD. Lightweight (2.7 lbs), fanless design, Retina display, and up to 18 hours battery.',
- 1199.00, 'mba-m3.jpg', 4, 0.00),
 
 ('PlayStation 5 Console',
  'Latest Slim edition, 1 TB SSD',
@@ -92,18 +82,18 @@ INSERT INTO products (name, description, long_description, price, image, categor
  2499.00, 'rgb-desktop.jpg', 1, 0.00),
 
 ('Budget Home Laptop',
- '15.6”, Intel i3, 256 GB SSD, 8 GB RAM',
- 'Affordable 15.6" laptop with Intel Core i3 processor, 256 GB SSD, and 8 GB RAM. Ideal for students and home use. Comes with Windows 11 Home and a full-size keyboard with numpad.',
+ '15.6-inch, Intel i3, 256 GB SSD, 8 GB RAM',
+ 'Affordable 15.6-inch laptop with Intel Core i3 processor, 256 GB SSD, and 8 GB RAM. Ideal for students and home use. Comes with Windows 11 Home and a full-size keyboard with numpad.',
  449.00, 'budget-laptop.jpg', 2, 15.00),
 
 ('MacBook Pro M3',
- '16”, 12-core CPU, 512 GB SSD',
+ '16-inch, 12-core CPU, 512 GB SSD',
  'Apple MacBook Pro with M3 Pro chip, 12-core CPU, 18-core GPU, 16 GB unified memory, 512 GB SSD. Features 16.2-inch Liquid Retina XDR display, 1080p webcam, and 3 Thunderbolt 4 ports.',
  2399.00, 'mbp-m3.jpg', 4, 8.00),
 
-('iPad Pro 11”',
+('iPad Pro 11-inch',
  'M2 chip, 256 GB, Wi-Fi + Cellular',
- 'Apple iPad Pro 11" (4th Gen) with M2 chip, 256 GB storage, Wi-Fi + Cellular (5G), Liquid Retina display with ProMotion, Face ID, and Pencil 2 support.',
+ 'Apple iPad Pro 11-inch (4th Gen) with M2 chip, 256 GB storage, Wi-Fi + Cellular (5G), Liquid Retina display with ProMotion, Face ID, and Pencil 2 support.',
  999.00, 'ipad-pro.jpg', 5, 0.00),
 
 ('Wireless Gaming Mouse',

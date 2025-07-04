@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.5, created on 2025-06-30 04:58:16
+/* Smarty version 4.5.5, created on 2025-07-02 02:54:38
   from 'C:\Users\bresn\OneDrive\Documents\GitHub\NewarkIT-Ecommerce-Site\presentation\templates\layouts\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.5',
-  'unifunc' => 'content_6861fd48856052_51712842',
+  'unifunc' => 'content_6864834ef41924_83309240',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1b562279b1f4c449b861e4df7a08f106af84e251' => 
     array (
       0 => 'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\presentation\\templates\\layouts\\footer.tpl',
-      1 => 1751252293,
+      1 => 1751414476,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6861fd48856052_51712842 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6864834ef41924_83309240 (Smarty_Internal_Template $_smarty_tpl) {
 ?></div>
 <br>
 <footer class="footer mt-auto pt-4 pb-3 text-white" style="background-color: #000; padding-top: 60px;">
@@ -28,7 +28,7 @@ function content_6861fd48856052_51712842 (Smarty_Internal_Template $_smarty_tpl)
     <div class="row align-items-center">
 
       <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
-        <a href="/NewarkIT-Ecommerce-Site/public/index.php">
+        <a href="../public/index.php">
           <img src="../images/newark-it-logo-notext.png" alt="Newark IT" style="max-height: 50px;">
         </a>
       </div>

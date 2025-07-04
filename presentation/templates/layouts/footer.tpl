@@ -5,7 +5,7 @@
     <div class="row align-items-center">
 
       <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
-        <a href="/NewarkIT-Ecommerce-Site/public/index.php">
+        <a href="../public/index.php">
           <img src="../images/newark-it-logo-notext.png" alt="Newark IT" style="max-height: 50px;">
         </a>
       </div>

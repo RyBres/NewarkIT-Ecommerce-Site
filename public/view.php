@@ -7,12 +7,11 @@ require_once '../include/functions.php';
 $navCats = getNavCategories($conn);
 $smarty->assign('navCats', $navCats);
 
-// Determine how to fetch the cart
 $cart_items = [];
 $cart_total = 0;
 
 if (isset($_SESSION['user_id'])) {
-    // Logged-in user cart
+    // Logged in cart
     $user_id = $_SESSION['user_id'];
 
     $query = "
@@ -59,15 +58,12 @@ while ($row = $result->fetch_assoc()) {
     $cart_items[] = $row;
 }
 
-
-// Assign variables
 $smarty->assign('user_logged_in', isset($_SESSION['user_id']));
 $smarty->assign('user_name', $_SESSION['user_name'] ?? '');
 $smarty->assign('cart_items', $cart_items);
 $smarty->assign('cart_total', $cart_total);
 $smarty->assign('title', 'Your Cart');
 
-// Display
 $smarty->display('layouts/header.tpl');
 $smarty->display('pages/cart.tpl');
 $smarty->display('layouts/footer.tpl');

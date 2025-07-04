@@ -8,7 +8,7 @@ require_once '../include/functions.php';
 $navCats = getNavCategories($conn);
 $smarty->assign('navCats', $navCats);
 
-/* Get products for the home grid (e.g. newest 6) */
+/* Get products for the home grid */
 $products = [];
 $prodRes = $conn->query("SELECT *, 
   ROUND(price - (price * discount_percent / 100), 2) AS final_price 

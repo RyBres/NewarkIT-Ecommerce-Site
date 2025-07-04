@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.5.5, created on 2025-07-01 01:26:29
+/* Smarty version 4.5.5, created on 2025-07-02 01:39:35
   from 'C:\Users\bresn\OneDrive\Documents\GitHub\NewarkIT-Ecommerce-Site\presentation\templates\pages\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.5.5',
-  'unifunc' => 'content_68631d252ad543_70433320',
+  'unifunc' => 'content_686471b77129d0_12960744',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '59610cafd2a57c7410805ca2836baaefeef0a18d' => 
     array (
       0 => 'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\presentation\\templates\\pages\\index.tpl',
-      1 => 1751325987,
+      1 => 1751406758,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_68631d252ad543_70433320 (Smarty_Internal_Template $_smarty_tpl) {
+function content_686471b77129d0_12960744 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),1=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.truncate.php','function'=>'smarty_modifier_truncate',),2=>array('file'=>'C:\\Users\\bresn\\OneDrive\\Documents\\GitHub\\NewarkIT-Ecommerce-Site\\smarty\\plugins\\modifier.number_format.php','function'=>'smarty_modifier_number_format',),));
 ?>
 
@@ -39,7 +39,6 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\Users\\bresn\\OneDrive\\
 		  </div>
 		</div>
 
-		<!-- Arrows -->
 		<button class="carousel-control-prev" type="button" data-bs-target="#homepageCarousel" data-bs-slide="prev">
 		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 		  <span class="visually-hidden">Previous</span>

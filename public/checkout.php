@@ -3,6 +3,7 @@ session_start();
 require_once '../include/smarty.php';
 require_once '../include/db.php';
 require_once '../include/functions.php';
+require_once '../include/emailer.php';
 
 $session_id = session_id();
 $navCats = getNavCategories($conn);
@@ -140,10 +141,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 	// Send email
 	if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-		@mail($email, $subject, $body, $headers);
+		sendOrderConfirmationEmail($email, $name, $cart, $total);
 	} else {
-		// log / ignore silently
-		error_log("Invalid email address on order confirmation: $email");
+		// log any errors
+		error_log("Invalid email address: $email");
 	}
 
 	

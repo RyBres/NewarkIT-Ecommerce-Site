@@ -12,7 +12,7 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 
-// Fetch orders for the user
+// Fetch orders
 $orders = [];
 $order_sql = "
     SELECT o.order_id, o.order_date, o.total, o.status,
@@ -39,7 +39,6 @@ while ($row = $res->fetch_assoc()) {
     $orders[$row['order_id']]['items'][] = $row;
 }
 
-// Smarty assignments
 $smarty->assign('title', 'My Orders');
 $smarty->assign('orders', $orders);
 $smarty->assign('user_logged_in', true);

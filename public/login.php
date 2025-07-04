@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['user_name'] = $user['first_name'];
-            header("Location: /NewarkIT-Ecommerce-Site/public/index.php");
+            header("Location: ../public/index.php");
             exit;
         } else {
             $error = "Incorrect password.";

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>{#site_title#}.com. Tech you can trust.</title>
 	<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
-    <!-- Bootstrap -->
+    <!-- dependencies -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,14 +15,14 @@
   </head>
   <body>
   <div class="d-flex flex-column min-vh-100">
-    <!-- Top Header -->
+    <!-- Top header -->
     <div class="top-header">
       <div class="container d-flex justify-content-between align-items-center py-2" style="white-space: nowrap;">
         <!-- Logo -->
         <a href="../public/index.php">
         <img src="../images/newark-it-logo.png" alt="Newark IT" class="img-fluid" style="max-height: 80px;">
         </a>
-		<!-- Search Bar -->
+		<!-- Search bar -->
 		<form class="w-50 position-relative" method="get" action="../public/search.php" autocomplete="off">
 		  <div class="input-group">
 			<input id="searchInput" type="search" name="q" class="form-control" placeholder="Search Newark IT" aria-label="Search">
@@ -33,11 +33,11 @@
 			</button>
 		  </div>
 
-		  <!-- Suggestion Box -->
+		  <!-- Suggestions -->
 		  <ul id="searchSuggestions" class="list-group position-absolute w-100 mt-1 z-3" style="max-height: 250px; overflow-y: auto; display: none;"></ul>
 		</form>
 
-        <!-- Login / Cart -->
+        <!-- Login / cart -->
         <div class="d-flex align-items-center">
           {if $user_logged_in}
           <span class="me-2 text-end">
@@ -71,7 +71,7 @@
         </div>
       </div>
     </div>
-    <!-- Main Navbar -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-black bg-light">
       <div class="container custom-container">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
@@ -82,13 +82,13 @@
             {foreach $navCats as $dept}
             {if $dept.name == 'Services'}
             <li class="nav-item">
-              <a class="nav-link" style="width:125px !important; min-width:125px !important;" href="/NewarkIT-Ecommerce-Site/public/services.php">
+              <a class="nav-link" style="width:125px !important; min-width:125px !important;" href="../public/services.php">
               <strong>{$dept.name}</strong>
               </a> <!-- MOVE THIS TO STYLES -->
             </li>
 			{elseif $dept.name == 'Deals'}
 			<li class="nav-item">
-			  <a class="nav-link" style="width:125px !important; min-width:125px !important;" href="/NewarkIT-Ecommerce-Site/public/deals.php">
+			  <a class="nav-link" style="width:125px !important; min-width:125px !important;" href="../public/deals.php">
 				<strong>{$dept.name}</strong>
 			  </a>
 			</li>
@@ -107,7 +107,7 @@
             {/if}
             {/foreach}
           </ul>
-          <!-- Support Blurb -->
+          <!-- Support text -->
           <span class="navbar-text text-black ms-auto d-none d-lg-block">
             Questions or concerns? Call toll-free at <strong>1-800-555-TECH</strong>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" style="vertical-align: -0.25em;" class="bi bi-phone" viewBox="0 0 16 16">
@@ -118,5 +118,4 @@
         </div>
       </div>
     </nav>
-    <!-- Main Page Content Container -->
     <div class="container mt-4">
