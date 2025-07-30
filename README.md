@@ -1,6 +1,6 @@
 # 🖥️ Newark IT
 
-**Newark IT** is a mock e-commerce website for an online tech store, built with PHP, MySQL, and the Smarty templating engine. It features dynamic content, user authentication, shopping cart functionality, and email order confirmations using PHPMailer.
+**Newark IT** is a mock e-commerce website for an online tech store, built with PHP, MySQL, and the Smarty templating engine. It features dynamic content, user authentication, shopping cart functionality, and email order confirmations using PHPMailer. All presented in a nice, clean interface with skeuomorphic elements.
 
 Hosted via InfinityFree. Click the link below to check out and interact with the website.
 
@@ -23,6 +23,8 @@ Hosted via InfinityFree. Click the link below to check out and interact with the
 
 ## Project Structure
 
+The files featured in the repo are structured as such:
+
 ```
 NewarkIT/  
 ├── public/ - All publicly accessible files (index, product pages, etc.)  
@@ -40,7 +42,7 @@ NewarkIT/
 ## Email Integration
 
 - Uses PHPMailer for sending order confirmations
-- Configured via Mailtrap.io for SMTP testing (note that it won't actually send an email to your inbox as it is under the demo/testing plan)
+- Configured via Mailtrap.io for SMTP testing (note that it won't send an email to your inbox as it is under the demo/testing plan)
 
 ---
 
@@ -57,11 +59,13 @@ NewarkIT/
 
 ## Screenshots
 
-<img width="872" height="802" alt="image" src="https://github.com/user-attachments/assets/822697ec-0b37-4254-bdcb-260d659a84e3" />
+<img width="900" height="800" alt="image" src="https://github.com/user-attachments/assets/822697ec-0b37-4254-bdcb-260d659a84e3" />
 
-<img width="891" height="803" alt="image" src="https://github.com/user-attachments/assets/093a75c5-a866-47ce-b255-bcff7cd91d3e" />
 
-<img width="905" height="800" alt="image" src="https://github.com/user-attachments/assets/07363f51-529c-4211-9273-5ad9fbebc506" />
+<img width="900" height="800" alt="image" src="https://github.com/user-attachments/assets/093a75c5-a866-47ce-b255-bcff7cd91d3e" />
+
+
+<img width="900" height="800" alt="image" src="https://github.com/user-attachments/assets/07363f51-529c-4211-9273-5ad9fbebc506" />
 
 
 ---
