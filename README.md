@@ -1,4 +1,4 @@
-<img width="288" height="85" alt="image" src="https://github.com/user-attachments/assets/53568e43-caed-404c-b727-fe69ea8051e5" />
+<img width="350" height="100" alt="image" src="https://github.com/user-attachments/assets/53568e43-caed-404c-b727-fe69ea8051e5" />
 
 
 **Newark IT** is a mock e-commerce website for an online tech store, built with PHP, MySQL, and the Smarty templating engine. It features dynamic content, user authentication, shopping cart functionality, and email order confirmations using PHPMailer.
